@@ -1,6 +1,8 @@
 package kr.or.ksmart.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
@@ -83,13 +85,30 @@ public class Sample01 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		//request 요청에 관련된 정보를 담은 객체 -> 요청 정보(요청os, 클라이언트, 파라미터, 헤더 등)
+		//response 응답에 관련된 정보를 담은 객체 -> 응답 정보(헤더, 응답코드, 응답타입등)
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.append("<html>");
+		out.append("<head>");
+		out.append("<meta charset=\"UTF-8\">");
+		out.append("</head>");
+		out.append("<body>");
+		out.append("<h1>안녕하세요</h1>");
+		out.append("</body>");
+		out.append("</html>");
+		out.flush(); //비우고
+		out.close(); //객체 닫기
 	}
 
 	/**
 	 * service 메소드에서 분기된 doGet 메소드 : 요청방식 post(form을 만들거나, 다른 방식으로 선택했을경우 발동) 
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
