@@ -27,6 +27,8 @@ public class Ksmart extends HttpServlet {
 		
 		String forwardPath = null;
 		
+		//uri를 빼서 이를 바탕으로 반복되는 코드를 줄여, 파일들을 맵핑하여 움직이도록 한다.
+		
 		if("/*".equals(uri)) {
 			response.sendRedirect(request.getContextPath()+"/main.ksmart");
 		}else if("/main".equals(uri)) {
