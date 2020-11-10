@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>포워드테스트</title>
+<title>메인페이지</title>
 </head>
 <body>
-	<h1>안녕하세요!</h1>
-	나의이름은 : ${myName} 입니다. 
+	<h1>메인페이지!</h1>
+	<a href="<%=request.getContextPath() %>/join.ksmart">회원가입</a>
 </body>
 </html>

@@ -37,6 +37,17 @@ public class Sample02 extends HttpServlet {
 
 		// getRequestDispatcher("") 인수에 포워드 시킬 경로 지정
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/view/sample.jsp");
+		
+		
+		/*********************************
+		 * request 객체에 데이터를 담아 뷰에 전달하기
+		 * setAttribute 메소드로 데이터 전달 가능
+		 *********************************/
+		
+		request.setAttribute("myName", "홍길동");
+		
+		
+		
 		// 포워드 메소드 실행
 		rd.forward(request, response);
 	}
