@@ -44,7 +44,7 @@ public class MemberController extends HttpServlet {
 			// memberList로 mapping
 			response.sendRedirect(request.getContextPath() + SERVICE_NAME+"memberList");
 		} else if (uri.equals(SERVICE_NAME+"memberList")) {
-			memberService.getMemberList();
+		
 			// 서비스 호출
 			// 생성자 메소드딴에서 호출하지 않고 호출
 			//MemberService memberService = new MemberService();
