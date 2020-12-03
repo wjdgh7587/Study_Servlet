@@ -1,0 +1,129 @@
+.nav .logo {
+  font-family: "Yellowtail", cursive;
+  color: azure;
+}
+
+#blog-section {
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+.content-title {
+  padding: 5px;
+  background-color: #fff;
+}
+.content-title h3 a {
+  color: #34495e;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.content-title h3 a:hover {
+  color: #341f97;
+}
+.content-footer {
+  background-color: #f39c12;
+  padding: 10px;
+  position: relative;
+}
+.content-footer span a {
+  color: #4e71a8;
+  display: inline-block;
+  padding: 6px 5px;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.content-footer span a:hover {
+  color: #341f97;
+}
+
+aside {
+  margin-top: 30px;
+  -webkit-box-shadow: 1px 4px 16px 3px rgba(199, 197, 199, 1);
+  -moz-box-shadow: 1px 4px 16px 3px rgba(199, 197, 199, 1);
+  box-shadow: 1px 4px 16px 3px rgba(199, 197, 199, 1);
+}
+aside .content-footer > img {
+  width: 33px;
+  height: 33px;
+  border-radius: 100%;
+  margin-right: 10px;
+  border: 2px solid #3a3a3a;
+}
+.user-ditels {
+  width: 300px;
+  top: -100px;
+  height: 100px;
+  padding-bottom: 99px;
+  position: absolute;
+  border: solid 2px #3a3a3a;
+  background-color: #fff;
+  right: 25px;
+  display: none;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .user-ditels {
+    right: 5px;
+  }
+}
+.user-small-img {
+  cursor: pointer;
+}
+
+.content-footer:hover .user-ditels {
+  display: block;
+}
+.content-footer .user-ditels .user-img {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+.user-full-ditels h3 {
+  background-color: #3a3a3a;
+  color: #fff;
+  display: block;
+  margin: 0px;
+  padding-top: 10px;
+  padding-right: 28px;
+  text-align: right;
+}
+.user-full-ditels p {
+  color: #fff;
+  display: block;
+  margin: 0px;
+  padding-right: 20px;
+  padding-top: 5px;
+  text-align: right;
+}
+.social-icon {
+  margin-top: 10px;
+  padding-right: 20px;
+  text-align: right;
+}
+.social-icon > a {
+  font-size: 20px;
+  text-decoration: none;
+  padding: 5px;
+}
+.social-icon a:nth-of-type(1) {
+  color: #4e71a8;
+}
+.social-icon a:nth-of-type(2) {
+  color: #3fa1da;
+}
+.social-icon a:nth-of-type(3) {
+  color: #e3411f;
+}
+.social-icon a:nth-of-type(4) {
+  color: #ca3737;
+}
+.social-icon a:nth-of-type(5) {
+  color: #3a3a3a;
+}
+
+.widget-sidebar {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+
