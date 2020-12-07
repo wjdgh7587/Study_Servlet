@@ -3,6 +3,7 @@ package kr.or.ksmart.service;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import kr.or.ksmart.connection.SqlConnector;
 import kr.or.ksmart.dao.MemberDao;
@@ -135,5 +136,37 @@ public class MemberService {
 		
 		return result ;
 	}
+	
+	//bt_test 연결
+	public int btProcessTest(List<Map<String, Object>> params) {
+		Connection conn = SqlConnector.getConnection();
+		MemberDao memberDao = new MemberDao(conn);
+		int result = 0;
+		
+		try {		
+			
+			conn.setAutoCommit(false);
+			
+			result = memberDao.btProcessTest(params);
+		    conn.commit();
+			
+		}catch(SQLException e){
+			//실패할 경우 0으로 초기화 실패했는데도 결과값이 있으면 문제가 된다.
+			e.printStackTrace();
+			result = 0;
+		}finally {
+			try {
+				if(conn != null)  {
+					conn.rollback();
+				}
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return result ;
+	}
+
+
 }
 

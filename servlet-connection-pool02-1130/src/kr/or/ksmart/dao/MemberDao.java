@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Map;
 
 import kr.or.ksmart.dto.MemberDto;
 
@@ -136,4 +136,41 @@ public class MemberDao {
 		ps.close();
 		return result;
 	}
+	
+	//배치 작업
+	public int btProcessTest(List<Map<String,Object>> params) throws SQLException{
+		String sql = "INSERT INTO tb_test (t_name, t_season, t_amount) VALUES (?, ?, ?)";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		
+		if(params != null && params.size() >0) {
+			for(Map<String, Object> map : params) {
+				ps.setString(1, (String) map.get("t_name"));
+				ps.setString(2, (String) map.get("t_season"));
+				ps.setInt(3, (int) map.get("t_amount"));
+				//앞서 컨트롤러에서 세팅한 키값 세팅
+				ps.addBatch(); //반복에 들어간 데이터를 메모리에 저장
+				//반복문을 올려놓은걸 메모리에 배치한다.
+			}
+		}
+//		ps.setString(1, "id015");
+//		ps.setString(2, "id015");
+//		ps.setInt(3, 0);
+//
+		
+		int[] resultArray = ps.executeBatch();
+		int result = 0;
+		
+		//intArray 배열 풀어서 반환
+		if(resultArray != null && resultArray.length > 0) {
+			for(int r : resultArray) {
+				result += r;
+			}
+		}
+		ps.close();
+		return result;
+		
+		//스프링에서는 위와 같은 작업을 간단하게 알아서 다 처리해준다.
+		//하지만 스프링이 없다고 가정하면, 스레드에 관련된 모든 	부분을 처리가 되도록 코드를 짜주어야 한다.
+	}
+
 }
