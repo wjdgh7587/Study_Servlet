@@ -11,14 +11,14 @@ var account_email = document.getElementById("account_email");
 var account_citizen_number = document.getElementById("account_citizen_number");
 
 //data check
-
-console.log(account_number);
-console.log(account_password);
-console.log(account_password_re);
-console.log(account_name);
-console.log(account_en_name);
-console.log(account_email);
-console.log(account_citizen_number);
+//
+//console.log(account_number);
+//console.log(account_password);
+//console.log(account_password_re);
+//console.log(account_name);
+//console.log(account_en_name);
+//console.log(account_email);
+//console.log(account_citizen_number);
 
 //Input form
 
@@ -90,4 +90,4 @@ function signValidity() {
 }
 
 sign_btn.addEventListener("click", signValidity);
-double_id_check.addEventListener("click", doubleIdCheck);
+//double_id_check.addEventListener("click", doubleIdCheck);

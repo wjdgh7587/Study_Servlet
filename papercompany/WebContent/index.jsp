@@ -317,8 +317,8 @@
     <!-- footer column end -->
 
     <script src="resource/js/validity_check.js"></script>
-    <script src="resource/js/jquery/jquery-3.5.1.min.js" type="text/javascript"></script>
-    <script src="resource/js/bootstrap-3.3.2/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="resource/js/jquery-3.5.1.min.js" type="text/javascript"></script>
+    <script src="resource/bootstrap-3.3.2/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/bdd998710e.js" crossorigin="anonymous"></script>
 </body>
 </html>
